@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Pinyon+Script|Vidaloka" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="main.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="..\Library\p5.js"></script>
+        <script src="..\Library\p5.dom.js"></script>
+        <script src="..\Library\matter.js"></script>
+        <script src="..\Library\pathseg.js"></script>
+        <script src="js\clock.js"></script>
+        <script src="js\ship.js"></script>
+        <script src="js\lane.js"></script>
+        <script src="js\spawner.js"></script>
+        <script src="js\seabed.js"></script>
+        <script src="js\currentFleet.js"></script>
+        <script src="js\script_2.js"></script>
+        <title>Ships of the Royal Navy Over Time</title>
+    </head>
+    <body>
+        <div class="top-bg">
+            <div class="container">
+                <div class="row" style="padding-bottom: 0">
+                    <input type=range min="1645" max="2017" step="1" value="1645" id="from-slider" class="input-slider"></input>
+                    <div id="from-date"><span id="from-date-no">1645</span> &#8211;</div>
+                    <button id="nav-wheel" value="Play"></button>
+                    <div id="to-date">2017</div>
+                    <input type=range min="1645" max="2017" value="2017" id="to-slider" class="input-slider"></input>
+                </div>
+                <div class="row" style="padding-top: 0">
+                    <small class="cta">Click wheel to play/stop/restart</small>
+                </div>
+            </div>
+        </div>
+        <div class="paper-background">
+            <div class="map-overlay"></div>
+            <div class="container">
+                <h4 class="upper">Size &amp; Losses</h4>
+                <h1 class="rn-title">Royal Navy Fleet</h1>
+                <h4 class="lower">Over Time</h4>
+                <div class="title-background"></div>
+                <div class="row" style="margin-top: 110px">
+                    <div id="sunk-counter" class="counter">
+                        <div id="gear2_01"></div>
+                        <div id="gear2_01b"></div>
+                        <div id="gear2_02"></div>
+                        <h3 id="sunk-number">0</h3>
+                        <p class="counter-label">Sunk <strong>/</strong></p>
+                    </div>
+                    <div id="decom-counter" class="counter">
+                        <div id="gear2_01"></div>
+                        <div id="gear2_01b"></div>
+                        <div id="gear2_02"></div>
+                        <h3 id="decom-number">0</h3>
+                        <p class="counter-label">Decommissioned</p>
+                    </div>
+                    <div id="year-counter" class="counter">
+                        <div id="gear_01"></div>
+                        <div id="gear_01b"></div>
+                        <div id="gear_02"></div>
+                        <div id="gear_03"></div>
+                        <div id="gear_03b"></div>
+                        <div id="gear_04"></div>
+                        <div id="gear_05"></div>
+                        <div id="gear_06"></div>
+                        <h3 id="year-number">1645</h3>
+                    </div>
+                    <div id="total-counter" class="counter">
+                        <div id="gear2_01"></div>
+                        <div id="gear2_01b"></div>
+                        <div id="gear2_02"></div>
+                        <h3 id="total-number">0</h3>
+                        <p class="counter-label">Ships in Active Service</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sea-background">
+                <div id="canvas-content"></div>
+            </div>
+            <div id="anchor"></div>
+            <div id="arrow"><p>Scroll Down</p></div>
+            <div id="sinking-ship"></div>
+        </div>
+    </body>
+</html>
